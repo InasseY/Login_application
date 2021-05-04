@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoginDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'LoginDB.dbo.userTeam' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="userTeam">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="LoginDBModelStoreContainer">
+    <EntitySet Name="userTeam" EntityType="Self.userTeam" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [userTeam].[UserId] AS [UserId], 
+    [userTeam].[UserName] AS [UserName], 
+    [userTeam].[Password] AS [Password]
+    FROM [dbo].[userTeam] AS [userTeam]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
