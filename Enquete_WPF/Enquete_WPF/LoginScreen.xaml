@@ -6,41 +6,77 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"      
         xmlns:local="clr-namespace:Enquete_WPF"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="350" FontSize="14">
-    <Window.Background>
-        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="0"/>
-            <GradientStop Color="#FFE9E1D8" Offset="1"/>
-        </LinearGradientBrush>
-    </Window.Background>
-    <Border Background="#FFF5EEE6" CornerRadius="20" Margin="20">
-        <StackPanel Margin="20,10,20,10.5">
-            <Button  Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
-                 ToolTip="Close" x:Name="btnExit" Click="BtnExit_Click" Margin="220,0,7,0" Height="30" Width="Auto" RenderTransformOrigin="0.447,-0.774">
-                <materialDesign:PackIcon Kind="Close" Foreground="White" Width="30" Height="30" RenderTransformOrigin="0.5,0.5" >
-                    <materialDesign:PackIcon.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-24.427"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </materialDesign:PackIcon.RenderTransform>
-                </materialDesign:PackIcon>
-            </Button>
-            <Label Content="Se connecter" Foreground="#685454" FontSize="20" HorizontalAlignment="Center" FontFamily="Times New Roman"/>
-            <Separator/>
-            <Label Content="Identifiant" Foreground="#685454"/>
-            <TextBox x:Name="txtId" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
-            <Label Content="Mot de passe" Foreground="#685454"/>
-            <PasswordBox x:Name="txtPassword" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
-            <Label Content="Confirmation Mot de passe" Foreground="#685454"/>
-            <PasswordBox x:Name="passwordBoxConfirm" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
-            <Button x:Name="btnSubmit" Click="BtnSubmit_Click" Content="Connecter" Margin="60 10" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
-            <Button x:Name="btnCancel" Content="Annuler" Margin="60 10" Foreground="#685454" Background="#FFE9E1D8" FontSize="18" Click="btnCancel_Click"/>
-            <TextBlock Height="14" HorizontalAlignment="Left" Margin="11,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+        Title="LoginScreen" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Grid MouseDown="Border_MouseDown">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#f9f3f3" Offset="1" />
+                <GradientStop Color="#e2d5d5" Offset="0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#dddddd" MouseDown="Border_MouseDown">
+            <Button x:Name="retour" Content="Retour" Height="Auto" Margin="0,0,725,360" Click="Button_Click" BorderBrush="#FFF6EFEF" Background="{x:Null}" Foreground="#DD160202"/>
+        </Border>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="350">
+                <Image Source="teamwork-2198961__480.png" Width="250" Height="250" VerticalAlignment="Top" Margin="50,30" Stretch="Fill"/>
+            </StackPanel>
+            <StackPanel Width="350">
+                <StackPanel Margin="20 40">
+                    <TextBlock Text="Connexion" Margin="20" Foreground="Black" TextAlignment="Center" FontSize="30" FontFamily="MV Boli"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="Black"/>
+                        <TextBox x:Name="txtId" Margin="10 0" materialDesign:HintAssist.Hint="Ecrit ton identifiant" Foreground="Black" Width="250" BorderBrush="White" CaretBrush="Black" SelectionBrush="Black"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <materialDesign:PackIcon Kind="Password" Width="25" Height="25" Foreground="Black"/>
+                        <PasswordBox x:Name="txtPassword" Margin="10 0" materialDesign:HintAssist.Hint="*********" Foreground="Black" Width="250" BorderBrush="White" CaretBrush="Black" SelectionBrush="Black"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <materialDesign:PackIcon Kind="Password" Width="25" Height="25" Foreground="Black"/>
+                        <PasswordBox x:Name="passwordBoxConfirm" Margin="10 0" materialDesign:HintAssist.Hint="*********" Foreground="Black" Width="250" BorderBrush="White" CaretBrush="Black" SelectionBrush="Black"/>
+                    </StackPanel>
+                    <StackPanel Margin="10" HorizontalAlignment="Center">
+                        <Button Width="125" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+                         materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="2" BorderBrush="#FF33B11B"  
+                         Background="#e2d5d5" Foreground="Black" ToolTip="Login" x:Name="btnSubmit" Click="BtnSubmit_Click" Content="Se connecter"/>
+                        <TextBlock Height="14" HorizontalAlignment="Left" Margin="11,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+                        <Button Width="125" Height="40" Style="{StaticResource MaterialDesignRaisedButton}"
+                         materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="2" BorderBrush="#FFE32C2C"  
+                         Background="#e2d5d5" Foreground="Black" ToolTip="Login" Click="btnCancel_Click" x:Name="btnCancel"  Content="Annuler"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
         </StackPanel>
 
-
-    </Border>
+    </Grid>
 </Window>
+<!--<StackPanel Margin="20,10,20,10.5">
+                -->
+<!--<Button  Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                 ToolTip="Close" x:Name="btnExit" Click="BtnExit_Click" Margin="220,0,7,0" Height="30" Width="Auto" RenderTransformOrigin="0.447,-0.774">
+                    <materialDesign:PackIcon Kind="Close" Foreground="White" Width="30" Height="30" RenderTransformOrigin="0.5,0.5" >
+                        <materialDesign:PackIcon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-24.427"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </materialDesign:PackIcon.RenderTransform>
+                    </materialDesign:PackIcon>
+                </Button>-->
+<!--
+                <Label Content="Se connecter" Foreground="#685454" FontSize="20" HorizontalAlignment="Center" FontFamily="Times New Roman"/>
+                <Separator/>
+                <Label Content="Identifiant" Foreground="#685454"/>
+                <TextBox x:Name="txtId" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
+                <Label Content="Mot de passe" Foreground="#685454"/>
+                <PasswordBox x:Name="txtPassword" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
+                <Label Content="Confirmation Mot de passe" Foreground="#685454"/>
+                <PasswordBox x:Name="passwordBoxConfirm" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
+                <Button x:Name="btnSubmit" Click="BtnSubmit_Click" Content="Connecter" Margin="60 10" Foreground="#685454" Background="#FFE9E1D8" FontSize="18"/>
+                <Button x:Name="btnCancel" Content="Annuler" Margin="60 10" Foreground="#685454" Background="#FFE9E1D8" FontSize="18" Click="btnCancel_Click"/>
+                <TextBlock Height="14" HorizontalAlignment="Left" Margin="11,0,0,0" x:Name ="errormessage" VerticalAlignment="Top" Width="247"  OpacityMask="Crimson" Foreground="#FFE5572C" />
+                    </StackPanel>-->
+            

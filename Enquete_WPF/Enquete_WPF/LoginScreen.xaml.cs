@@ -65,8 +65,18 @@ namespace Enquete_WPF
                 Close();
             }
 
-
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //DragMove();
+        }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();

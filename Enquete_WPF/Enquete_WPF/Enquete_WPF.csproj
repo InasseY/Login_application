@@ -153,6 +153,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="teamwork-2198961__480.png" />
     <Resource Include="team-4529717__480.jpg" />
     <Resource Include="images\teamwork-2198961__480.png" />
     <Resource Include="images\team-4423339__480.png" />

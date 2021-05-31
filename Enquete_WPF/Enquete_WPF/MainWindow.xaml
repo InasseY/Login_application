@@ -27,7 +27,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button Content="Teams" HorizontalAlignment="Center" Margin="405,0,0,0" VerticalAlignment="Top" Width="140" Height="45" Click="Connect_Click" FontSize="18" Foreground="#FFF8F6F6" BorderBrush="White">
+        <Button Content="Admin" HorizontalAlignment="Center" Margin="405,0,0,0" VerticalAlignment="Top" Width="140" Height="45" Click="Connect_Click" FontSize="18" Foreground="#FFF8F6F6" BorderBrush="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -35,7 +35,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Admin" HorizontalAlignment="Center" Margin="0,0,400,0" VerticalAlignment="Top" Width="145" Height="45" Click="Connect2_Click" FontSize="18" Foreground="#FFF8F6F6" RenderTransformOrigin="0.478,0.556" BorderBrush="White">
+        <Button Content="Teams" HorizontalAlignment="Center" Margin="0,0,400,0" VerticalAlignment="Top" Width="145" Height="45" Click="Connect2_Click" FontSize="18" Foreground="#FFF8F6F6" RenderTransformOrigin="0.478,0.556" BorderBrush="White">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

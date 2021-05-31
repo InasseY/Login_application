@@ -24,14 +24,14 @@ namespace Enquete_WPF
         {
             InitializeComponent();
         }
-        private void Connect_Click(object sender, RoutedEventArgs e)
+        private void Connect_Click(object sender, RoutedEventArgs e) //admin
         {
             LoginScreen login = new LoginScreen();
             login.Show();
             Close();
         }
 
-        private void Connect2_Click(object sender, RoutedEventArgs e)
+        private void Connect2_Click(object sender, RoutedEventArgs e) //teams
         {
             Login log = new Login();
             log.Show();
